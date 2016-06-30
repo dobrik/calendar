@@ -30,7 +30,7 @@
 </div>
 
 <div class="modal fade" id="modal-result" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content" id="event_result">
             .......
         </div>

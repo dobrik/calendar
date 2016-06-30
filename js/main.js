@@ -10,6 +10,9 @@ $('#sendEvent').click(function () {
     var desc = $('#desc').val();
     var place = $('#place').val();
     $.get('handler.php?date='+date+'&event='+event+'&desc='+desc+'&place='+place, function(e){
-        $('#event_result').html(e); 
+        $('#event_result').html(e);
+        setTimeout(function(){
+            $('#modal-result').modal('hide');
+        },5000)
     });
 })
