@@ -11,6 +11,33 @@
 </head>
 <body>
 
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">Добавить событие</h4></div>
+            <div class="modal-body">
+                <input type="text" id="event" placeholder="Событие">
+                <textarea id="desc" placeholder="Описание"></textarea>
+                <input type="text" id="place" placeholder="Место">
+                <input type="hidden" id="date">
+                <input type="submit" id="sendEvent" value="Добавить" data-dismiss="modal" data-target="#modal-result" data-toggle="modal">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-result" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" id="event_result">
+            .......
+        </div>
+    </div>
+</div>
+
+
 <?php
 /**
  * Created by PhpStorm.
@@ -51,9 +78,9 @@ function calCreate($monthFrom = 0, $monthTo = 11)
                 echo '<tr>';//открываем строку если началась новая неделя
             }
             if ($curDayNumber == 7) {
-                echo "<td class=\"date_slot\" style=\"color: red;\" data-date=\"".date('d.m.Y',$months[$j]+(($i-1)*86400))."\">";
+                echo "<td data-toggle=\"modal\" data-target=\".bs-example-modal-sm\" class=\"date_slot\" style=\"color: red;\" data-date=\"" . date('d.m.Y', $months[$j] + (($i - 1) * 86400)) . "\">";
             } else {
-                echo "<td class=\"date_slot\" data-date=\"".date('d.m.Y',$months[$j]+(($i-1)*86400))."\">";
+                echo "<td data-toggle=\"modal\" data-target=\".bs-example-modal-sm\" class=\"date_slot\" data-date=\"" . date('d.m.Y', $months[$j] + (($i - 1) * 86400)) . "\">";
             }
             echo $i . "</td>";//отображаем число
         }
@@ -66,6 +93,7 @@ function calCreate($monthFrom = 0, $monthTo = 11)
     }
     echo '</div></div>';
 }
+
 calCreate();
 ?>
 <script src="js/main.js"></script>

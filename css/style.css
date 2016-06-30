@@ -10,3 +10,11 @@
 td.date_slot:hover{
     background-color: #2aabd2;
 }
+.modal-body>#event{
+    width: 272px;
+}
+.modal-body>textarea{
+    margin-top: 5px;
+    min-height: 50px;
+    width: 272px;
+}
