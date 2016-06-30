@@ -5,14 +5,18 @@ $('.date_slot').click(function (e) {
     $('input#date').val(e.currentTarget.dataset.date);
 })
 $('#sendEvent').click(function () {
-    var date = $('#date').val();
-    var event = $('#event').val();
-    var desc = $('#desc').val();
-    var place = $('#place').val();
-    $.get('handler.php?date='+date+'&event='+event+'&desc='+desc+'&place='+place, function(e){
+    var date = $('#date');
+    var event = $('#event');
+    var desc = $('#desc');
+    var place = $('#place');
+    $.get('handler.php?date='+date.val()+'&event='+event.val()+'&desc='+desc.val()+'&place='+place.val(), function(e){
         $('#event_result').html(e);
         setTimeout(function(){
             $('#modal-result').modal('hide');
         },5000)
     });
+    $('#date').val('');
+    $('#event').val('');
+    $('#desc').val('');
+    $('#place').val('');
 })
