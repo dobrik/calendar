@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <body>
 
@@ -37,7 +38,7 @@ function calCreate($monthFrom = 0, $monthTo = 11)
                 <th>Ср</th>
                 <th>Чт</th>
                 <th>Пт</th>
-                <th style=\"color: red;\">Сб</th>
+                <th>Сб</th>
                 <th style=\"color: red;\">Вс</th>
             </tr>
             <tr>";
@@ -49,10 +50,10 @@ function calCreate($monthFrom = 0, $monthTo = 11)
             if (($i + $x - 2) % 7 == 0) {
                 echo '<tr>';//открываем строку если началась новая неделя
             }
-            if ($curDayNumber == 6 || $curDayNumber == 7) {
-                echo "<td style=\"color: red;\">";
+            if ($curDayNumber == 7) {
+                echo "<td class=\"date_slot\" style=\"color: red;\" data-date=\"".date('d.m.Y',$months[$j]+(($i-1)*86400))."\">";
             } else {
-                echo "<td>";
+                echo "<td class=\"date_slot\" data-date=\"".date('d.m.Y',$months[$j]+(($i-1)*86400))."\">";
             }
             echo $i . "</td>";//отображаем число
         }
@@ -65,9 +66,8 @@ function calCreate($monthFrom = 0, $monthTo = 11)
     }
     echo '</div></div>';
 }
-
 calCreate();
 ?>
-
+<script src="js/main.js"></script>
 </body>
 </html>

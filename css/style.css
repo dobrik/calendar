@@ -7,3 +7,6 @@
     margin: 20px 0;
     min-height: 170px;
 }
+td.date_slot:hover{
+    background-color: #2aabd2;
+}
