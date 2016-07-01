@@ -17,7 +17,7 @@ $('#sendEvent').click(function () {
             $('#event_result').html(e);
             Notification.requestPermission(function (permission) {
                 if (permission === "granted") {
-                    var notification = new Notification(e);
+                    var notification = new Notification('Событие создано!', {body: e,icon:'img/notification-flat.png'});
                     setTimeout(function () {
                         notification.close();
                     }, 5000);
