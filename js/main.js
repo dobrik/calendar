@@ -20,7 +20,7 @@ $('#sendEvent').click(function () {
                     var notification = new Notification('Событие создано!', {body: e,icon:'img/notification-flat.png'});
                     setTimeout(function () {
                         notification.close();
-                    }, 5000);
+                    }, 8000);
                 }
             });
             setTimeout(function () {
