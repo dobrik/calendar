@@ -12,6 +12,14 @@ $('#sendEvent').click(function () {
     if (event.val() != '' && desc.val() != '' && place.val() != '') {
         $.get('handler.php?date=' + date.val() + '&event=' + event.val() + '&desc=' + desc.val() + '&place=' + place.val(), function (e) {
             $('#event_result').html(e);
+			Notification.requestPermission(function (permission) {
+				if (permission === "granted") {
+				var notification = new Notification(e);
+				setTimeout(function(){
+					notification.close();
+				},5000);
+				}
+			});
             setTimeout(function () {
                 $('#modal-result').modal('hide');
             }, 5000)
