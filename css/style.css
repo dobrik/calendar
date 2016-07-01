@@ -9,6 +9,7 @@
 }
 td.date_slot:hover{
     background-color: #2aabd2;
+	cursor: pointer;
 }
 .modal-body>#event{
     width: 272px;
