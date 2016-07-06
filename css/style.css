@@ -22,3 +22,6 @@ td.date_slot:hover{
 #event_result{
     text-align: center;
 }
+.event_date{
+    background-color: #3e8f3e;!important;
+}
