@@ -51,7 +51,7 @@ function calCreate($monthFrom = 0, $monthTo = 11)
     for ($m = 0; $m < 11; $m++) {
         $months[] = (date('t', $months[$m]) * 86400) + $months[$m];
     }
-    echo '<div class="container"><div class="row">';
+    echo '<div class="container-fluid wallpaper"><div class="container"><div class="row">';
     for ($j = $monthFrom; $j <= $monthTo; $j++) {
         $curMonthName = date('F', $months[$j]);//Название месяца
         $curMonthDays = date('t', $months[$j]);//колво дней в месяце
@@ -91,7 +91,7 @@ function calCreate($monthFrom = 0, $monthTo = 11)
         echo '</table>
     </div>';
     }
-    echo '</div></div>';
+    echo '</div></div></div>';
 }
 
 calCreate();
