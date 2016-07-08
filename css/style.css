@@ -31,3 +31,6 @@ td.date_slot:hover{
     background-size: cover;
     color: #2e6da4;
 }
+#debug{
+    background-color: #2aabd2;
+}
